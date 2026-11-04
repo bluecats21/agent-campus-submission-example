@@ -28,10 +28,11 @@ pip install -r requirements.txt
 - python-dotenv>=1.0.0
 - pytest>=7.4.0
 
-## 运行
+## 运行方式
 
-### 1. 运行单个用例
+### CLI 命令行
 
+**运行单个问题**：
 ```bash
 python -X utf8 -c "
 import sys
@@ -43,28 +44,25 @@ print(json.dumps(result, ensure_ascii=False, indent=2))
 "
 ```
 
-### 2. 运行 4 组测试用例
-
+**运行 4 组测试用例**：
 ```bash
 python -X utf8 tests/run_cases.py
 ```
 
-输出：
+输出 trace 文件：
 - examples/traces/normal_unique.json
 - examples/traces/conflict.json
 - examples/traces/out_of_scope.json
 - examples/traces/tool_error.json
 
-### 3. 运行完整测试
-
+**运行完整测试**：
 ```bash
 python -X utf8 -m pytest tests/ -v
 ```
 
-当前测试数：22 个（全部通过）
+当前测试数：23 个（全部通过）
 
-### 4. 替换回归测试
-
+**替换回归测试**：
 ```bash
 python -X utf8 -m pytest tests/test_swap.py -v
 ```
