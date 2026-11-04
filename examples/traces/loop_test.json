@@ -1,0 +1,255 @@
+{
+  "case": "loop_test",
+  "query": "测试问题",
+  "conversation_history": [],
+  "steps": [
+    {
+      "step": 0,
+      "action": "search_docs",
+      "args": {
+        "query": "测试问题",
+        "top_k": 3
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "桩实现：固定执行首次检索"
+    },
+    {
+      "step": 1,
+      "action": "search_docs",
+      "args": {
+        "query": "测试问题",
+        "top_k": 3
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "桩实现：固定执行首次检索"
+    },
+    {
+      "step": 2,
+      "action": "search_docs",
+      "args": {
+        "query": "测试问题",
+        "top_k": 3
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "桩实现：固定执行首次检索"
+    },
+    {
+      "step": 3,
+      "action": "search_docs",
+      "args": {
+        "query": "测试问题",
+        "top_k": 3
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "桩实现：固定执行首次检索"
+    },
+    {
+      "step": 4,
+      "action": "search_docs",
+      "args": {
+        "query": "测试问题",
+        "top_k": 3
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "桩实现：固定执行首次检索"
+    },
+    {
+      "step": 5,
+      "action": "search_docs",
+      "args": {
+        "query": "测试问题",
+        "top_k": 3
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "桩实现：固定执行首次检索"
+    },
+    {
+      "step": 6,
+      "action": "search_docs",
+      "args": {
+        "query": "测试问题",
+        "top_k": 3
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "桩实现：固定执行首次检索"
+    },
+    {
+      "step": 7,
+      "action": "search_docs",
+      "args": {
+        "query": "测试问题",
+        "top_k": 3
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "桩实现：固定执行首次检索"
+    }
+  ],
+  "result": {
+    "status": "incomplete",
+    "done": [
+      {
+        "step": 0,
+        "action": "search_docs",
+        "args": {
+          "query": "测试问题",
+          "top_k": 3
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "桩实现：固定执行首次检索"
+      },
+      {
+        "step": 1,
+        "action": "search_docs",
+        "args": {
+          "query": "测试问题",
+          "top_k": 3
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "桩实现：固定执行首次检索"
+      },
+      {
+        "step": 2,
+        "action": "search_docs",
+        "args": {
+          "query": "测试问题",
+          "top_k": 3
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "桩实现：固定执行首次检索"
+      },
+      {
+        "step": 3,
+        "action": "search_docs",
+        "args": {
+          "query": "测试问题",
+          "top_k": 3
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "桩实现：固定执行首次检索"
+      },
+      {
+        "step": 4,
+        "action": "search_docs",
+        "args": {
+          "query": "测试问题",
+          "top_k": 3
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "桩实现：固定执行首次检索"
+      },
+      {
+        "step": 5,
+        "action": "search_docs",
+        "args": {
+          "query": "测试问题",
+          "top_k": 3
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "桩实现：固定执行首次检索"
+      },
+      {
+        "step": 6,
+        "action": "search_docs",
+        "args": {
+          "query": "测试问题",
+          "top_k": 3
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "桩实现：固定执行首次检索"
+      },
+      {
+        "step": 7,
+        "action": "search_docs",
+        "args": {
+          "query": "测试问题",
+          "top_k": 3
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "桩实现：固定执行首次检索"
+      }
+    ],
+    "undone": [
+      "达到最大步数限制，未完成任务"
+    ]
+  }
+}

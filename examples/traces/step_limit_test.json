@@ -1,0 +1,75 @@
+{
+  "case": "step_limit_test",
+  "query": "测试问题",
+  "conversation_history": [],
+  "steps": [
+    {
+      "step": 0,
+      "action": "search_docs",
+      "args": {
+        "query": "测试问题",
+        "top_k": 10
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "首次调用，执行初始检索（原始查询：测试问题，还原后：测试问题）"
+    },
+    {
+      "step": 1,
+      "action": "search_docs",
+      "args": {
+        "query": "测试",
+        "top_k": 10
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "search_docs 返回 empty，第 1 次改写重试"
+    }
+  ],
+  "result": {
+    "status": "incomplete",
+    "done": [
+      {
+        "step": 0,
+        "action": "search_docs",
+        "args": {
+          "query": "测试问题",
+          "top_k": 10
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "首次调用，执行初始检索（原始查询：测试问题，还原后：测试问题）"
+      },
+      {
+        "step": 1,
+        "action": "search_docs",
+        "args": {
+          "query": "测试",
+          "top_k": 10
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "search_docs 返回 empty，第 1 次改写重试"
+      }
+    ],
+    "undone": [
+      "达到最大步数限制，未完成任务"
+    ]
+  }
+}

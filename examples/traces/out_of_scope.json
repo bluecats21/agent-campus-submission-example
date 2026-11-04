@@ -1,0 +1,149 @@
+{
+  "case": "out_of_scope",
+  "query": "股票期权激励计划",
+  "conversation_history": [],
+  "steps": [
+    {
+      "step": 0,
+      "action": "search_docs",
+      "args": {
+        "query": "股票期权激励计划",
+        "top_k": 10
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "首次调用，执行初始检索（原始查询：股票期权激励计划，还原后：股票期权激励计划）"
+    },
+    {
+      "step": 1,
+      "action": "search_docs",
+      "args": {
+        "query": "股票",
+        "top_k": 10
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "search_docs 返回 empty，第 1 次改写重试"
+    },
+    {
+      "step": 2,
+      "action": "search_docs",
+      "args": {
+        "query": "股票",
+        "top_k": 10
+      },
+      "observation": {
+        "status": "empty",
+        "hits": [],
+        "error": null
+      },
+      "observation_summary": "无结果",
+      "reason": "search_docs 返回 empty，第 2 次改写重试"
+    },
+    {
+      "step": 3,
+      "action": "answer",
+      "args": {
+        "content": "未找到相关文档",
+        "status": "empty",
+        "gaps": [
+          "未找到与'股票期权激励计划'相关的文档"
+        ]
+      },
+      "observation": {
+        "status": "ok",
+        "content": "未找到相关文档",
+        "citations": [],
+        "gaps": [
+          "未找到与'股票期权激励计划'相关的文档"
+        ]
+      },
+      "observation_summary": "执行成功",
+      "reason": "改写 2 次后仍为 empty，无法回答"
+    }
+  ],
+  "result": {
+    "status": "completed",
+    "answer": "未找到相关文档",
+    "citations": [],
+    "gaps": [
+      "未找到与'股票期权激励计划'相关的文档"
+    ],
+    "steps": [
+      {
+        "step": 0,
+        "action": "search_docs",
+        "args": {
+          "query": "股票期权激励计划",
+          "top_k": 10
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "首次调用，执行初始检索（原始查询：股票期权激励计划，还原后：股票期权激励计划）"
+      },
+      {
+        "step": 1,
+        "action": "search_docs",
+        "args": {
+          "query": "股票",
+          "top_k": 10
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "search_docs 返回 empty，第 1 次改写重试"
+      },
+      {
+        "step": 2,
+        "action": "search_docs",
+        "args": {
+          "query": "股票",
+          "top_k": 10
+        },
+        "observation": {
+          "status": "empty",
+          "hits": [],
+          "error": null
+        },
+        "observation_summary": "无结果",
+        "reason": "search_docs 返回 empty，第 2 次改写重试"
+      },
+      {
+        "step": 3,
+        "action": "answer",
+        "args": {
+          "content": "未找到相关文档",
+          "status": "empty",
+          "gaps": [
+            "未找到与'股票期权激励计划'相关的文档"
+          ]
+        },
+        "observation": {
+          "status": "ok",
+          "content": "未找到相关文档",
+          "citations": [],
+          "gaps": [
+            "未找到与'股票期权激励计划'相关的文档"
+          ]
+        },
+        "observation_summary": "执行成功",
+        "reason": "改写 2 次后仍为 empty，无法回答"
+      }
+    ]
+  }
+}

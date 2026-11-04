@@ -1,0 +1,311 @@
+{
+  "case": "debug_conflict",
+  "query": "报销期限",
+  "conversation_history": [],
+  "steps": [
+    {
+      "step": 0,
+      "action": "search_docs",
+      "args": {
+        "query": "报销期限",
+        "top_k": 10
+      },
+      "observation": {
+        "status": "ok",
+        "hits": [
+          {
+            "doc_id": "D01",
+            "title": "员工报销管理制度",
+            "version_date": "2024-01-15",
+            "snippet_id": "D01_S3",
+            "snippet": "报销期限：员工应在费用发生后 <DAY_A> 天内提交报销申请，逾期不予受理。",
+            "score": 9
+          },
+          {
+            "doc_id": "D03",
+            "title": "差旅报销补充规定",
+            "version_date": "2024-02-15",
+            "snippet_id": "D03_S4",
+            "snippet": "特殊情况下（如偏远地区出差），报销期限可适当延长，需提前报备。",
+            "score": 8
+          },
+          {
+            "doc_id": "D02",
+            "title": "差旅费用管理办法",
+            "version_date": "2024-03-01",
+            "snippet_id": "D02_S3",
+            "snippet": "报销期限：出差人员应在返回公司后 <DAY_B> 个工作日内提交报销申请。",
+            "score": 7
+          },
+          {
+            "doc_id": "D01",
+            "title": "员工报销管理制度",
+            "version_date": "2024-01-15",
+            "snippet_id": "D01_S1",
+            "snippet": "为加强公司费用报销管理，规范报销流程，制定本制度。",
+            "score": 4
+          },
+          {
+            "doc_id": "D01",
+            "title": "员工报销管理制度",
+            "version_date": "2024-01-15",
+            "snippet_id": "D01_S2",
+            "snippet": "报销范围包括：差旅费、交通费、餐饮费、办公用品费等因公产生的合理费用。",
+            "score": 3
+          },
+          {
+            "doc_id": "D01",
+            "title": "员工报销管理制度",
+            "version_date": "2024-01-15",
+            "snippet_id": "D01_S5",
+            "snippet": "报销凭证：需提供合法有效的发票或收据，并附费用明细说明。",
+            "score": 3
+          },
+          {
+            "doc_id": "D03",
+            "title": "差旅报销补充规定",
+            "version_date": "2024-02-15",
+            "snippet_id": "D03_S1",
+            "snippet": "本规定适用于所有因公出差场景的费用报销。",
+            "score": 3
+          },
+          {
+            "doc_id": "D03",
+            "title": "差旅报销补充规定",
+            "version_date": "2024-02-15",
+            "snippet_id": "D03_S3",
+            "snippet": "差旅报销需在出差结束后及时提交，逾期需说明原因。",
+            "score": 3
+          },
+          {
+            "doc_id": "D01",
+            "title": "员工报销管理制度",
+            "version_date": "2024-01-15",
+            "snippet_id": "D01_S4",
+            "snippet": "审批流程：500 元以下由部门经理审批；500-5000 元由部门经理和财务总监审批；5000 元以上需总经理审批。",
+            "score": 2
+          },
+          {
+            "doc_id": "D02",
+            "title": "差旅费用管理办法",
+            "version_date": "2024-03-01",
+            "snippet_id": "D02_S4",
+            "snippet": "报销标准：交通费按实际发生金额报销；住宿费一线城市不超过 500 元/天，二线城市不超过 400 元/天。",
+            "score": 2
+          }
+        ],
+        "error": null
+      },
+      "observation_summary": "检索到 10 条结果",
+      "reason": "首次调用，执行初始检索（原始查询：报销期限，还原后：报销期限）"
+    },
+    {
+      "step": 1,
+      "action": "get_doc_meta",
+      "args": {
+        "doc_id": "D01"
+      },
+      "observation": {
+        "status": "ok",
+        "doc_id": "D01",
+        "scope": null,
+        "priority": null,
+        "effective_date": "2024-01-15",
+        "error": null
+      },
+      "observation_summary": "获取元数据成功",
+      "reason": "search_docs 返回 10 条结果，来自 3 个不同文档，检查元数据判断冲突（选择分数最高的 D01）"
+    },
+    {
+      "step": 2,
+      "action": "ask_user",
+      "args": {
+        "question": "发现文档冲突，以下文档均相关但元数据不足以判断适用范围：\n- D01（员工报销管理制度，版本 2024-01-15）\n- D03（差旅报销补充规定，版本 2024-02-15）\n- D02（差旅费用管理办法，版本 2024-03-01）\n\n请确认您需要查询哪项制度？",
+        "conflict_docs": [
+          "D01（员工报销管理制度，版本 2024-01-15）",
+          "D03（差旅报销补充规定，版本 2024-02-15）",
+          "D02（差旅费用管理办法，版本 2024-03-01）"
+        ],
+        "citations": [
+          {
+            "doc_id": "D01",
+            "snippet_id": "D01_S3",
+            "text": "报销期限：员工应在费用发生后 <DAY_A> 天内提交报销申请，逾期不予受理。"
+          },
+          {
+            "doc_id": "D03",
+            "snippet_id": "D03_S4",
+            "text": "特殊情况下（如偏远地区出差），报销期限可适当延长，需提前报备。"
+          },
+          {
+            "doc_id": "D02",
+            "snippet_id": "D02_S3",
+            "text": "报销期限：出差人员应在返回公司后 <DAY_B> 个工作日内提交报销申请。"
+          }
+        ]
+      },
+      "observation": {
+        "status": "error",
+        "error": "工具调用异常：ask_user() got an unexpected keyword argument 'conflict_docs'"
+      },
+      "observation_summary": "错误：工具调用异常：ask_user() got an unexpected keyword argument 'conflict_docs'",
+      "reason": "get_doc_meta 返回 ok 但 scope/priority 均为 null，无法消解冲突，请求用户确认"
+    }
+  ],
+  "result": {
+    "status": "completed",
+    "answer": "循环终止",
+    "citations": [],
+    "gaps": [],
+    "steps": [
+      {
+        "step": 0,
+        "action": "search_docs",
+        "args": {
+          "query": "报销期限",
+          "top_k": 10
+        },
+        "observation": {
+          "status": "ok",
+          "hits": [
+            {
+              "doc_id": "D01",
+              "title": "员工报销管理制度",
+              "version_date": "2024-01-15",
+              "snippet_id": "D01_S3",
+              "snippet": "报销期限：员工应在费用发生后 <DAY_A> 天内提交报销申请，逾期不予受理。",
+              "score": 9
+            },
+            {
+              "doc_id": "D03",
+              "title": "差旅报销补充规定",
+              "version_date": "2024-02-15",
+              "snippet_id": "D03_S4",
+              "snippet": "特殊情况下（如偏远地区出差），报销期限可适当延长，需提前报备。",
+              "score": 8
+            },
+            {
+              "doc_id": "D02",
+              "title": "差旅费用管理办法",
+              "version_date": "2024-03-01",
+              "snippet_id": "D02_S3",
+              "snippet": "报销期限：出差人员应在返回公司后 <DAY_B> 个工作日内提交报销申请。",
+              "score": 7
+            },
+            {
+              "doc_id": "D01",
+              "title": "员工报销管理制度",
+              "version_date": "2024-01-15",
+              "snippet_id": "D01_S1",
+              "snippet": "为加强公司费用报销管理，规范报销流程，制定本制度。",
+              "score": 4
+            },
+            {
+              "doc_id": "D01",
+              "title": "员工报销管理制度",
+              "version_date": "2024-01-15",
+              "snippet_id": "D01_S2",
+              "snippet": "报销范围包括：差旅费、交通费、餐饮费、办公用品费等因公产生的合理费用。",
+              "score": 3
+            },
+            {
+              "doc_id": "D01",
+              "title": "员工报销管理制度",
+              "version_date": "2024-01-15",
+              "snippet_id": "D01_S5",
+              "snippet": "报销凭证：需提供合法有效的发票或收据，并附费用明细说明。",
+              "score": 3
+            },
+            {
+              "doc_id": "D03",
+              "title": "差旅报销补充规定",
+              "version_date": "2024-02-15",
+              "snippet_id": "D03_S1",
+              "snippet": "本规定适用于所有因公出差场景的费用报销。",
+              "score": 3
+            },
+            {
+              "doc_id": "D03",
+              "title": "差旅报销补充规定",
+              "version_date": "2024-02-15",
+              "snippet_id": "D03_S3",
+              "snippet": "差旅报销需在出差结束后及时提交，逾期需说明原因。",
+              "score": 3
+            },
+            {
+              "doc_id": "D01",
+              "title": "员工报销管理制度",
+              "version_date": "2024-01-15",
+              "snippet_id": "D01_S4",
+              "snippet": "审批流程：500 元以下由部门经理审批；500-5000 元由部门经理和财务总监审批；5000 元以上需总经理审批。",
+              "score": 2
+            },
+            {
+              "doc_id": "D02",
+              "title": "差旅费用管理办法",
+              "version_date": "2024-03-01",
+              "snippet_id": "D02_S4",
+              "snippet": "报销标准：交通费按实际发生金额报销；住宿费一线城市不超过 500 元/天，二线城市不超过 400 元/天。",
+              "score": 2
+            }
+          ],
+          "error": null
+        },
+        "observation_summary": "检索到 10 条结果",
+        "reason": "首次调用，执行初始检索（原始查询：报销期限，还原后：报销期限）"
+      },
+      {
+        "step": 1,
+        "action": "get_doc_meta",
+        "args": {
+          "doc_id": "D01"
+        },
+        "observation": {
+          "status": "ok",
+          "doc_id": "D01",
+          "scope": null,
+          "priority": null,
+          "effective_date": "2024-01-15",
+          "error": null
+        },
+        "observation_summary": "获取元数据成功",
+        "reason": "search_docs 返回 10 条结果，来自 3 个不同文档，检查元数据判断冲突（选择分数最高的 D01）"
+      },
+      {
+        "step": 2,
+        "action": "ask_user",
+        "args": {
+          "question": "发现文档冲突，以下文档均相关但元数据不足以判断适用范围：\n- D01（员工报销管理制度，版本 2024-01-15）\n- D03（差旅报销补充规定，版本 2024-02-15）\n- D02（差旅费用管理办法，版本 2024-03-01）\n\n请确认您需要查询哪项制度？",
+          "conflict_docs": [
+            "D01（员工报销管理制度，版本 2024-01-15）",
+            "D03（差旅报销补充规定，版本 2024-02-15）",
+            "D02（差旅费用管理办法，版本 2024-03-01）"
+          ],
+          "citations": [
+            {
+              "doc_id": "D01",
+              "snippet_id": "D01_S3",
+              "text": "报销期限：员工应在费用发生后 <DAY_A> 天内提交报销申请，逾期不予受理。"
+            },
+            {
+              "doc_id": "D03",
+              "snippet_id": "D03_S4",
+              "text": "特殊情况下（如偏远地区出差），报销期限可适当延长，需提前报备。"
+            },
+            {
+              "doc_id": "D02",
+              "snippet_id": "D02_S3",
+              "text": "报销期限：出差人员应在返回公司后 <DAY_B> 个工作日内提交报销申请。"
+            }
+          ]
+        },
+        "observation": {
+          "status": "error",
+          "error": "工具调用异常：ask_user() got an unexpected keyword argument 'conflict_docs'"
+        },
+        "observation_summary": "错误：工具调用异常：ask_user() got an unexpected keyword argument 'conflict_docs'",
+        "reason": "get_doc_meta 返回 ok 但 scope/priority 均为 null，无法消解冲突，请求用户确认"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "case": "tool_error",
+  "query": "报销流程",
+  "conversation_history": [],
+  "steps": [
+    {
+      "step": 0,
+      "action": "search_docs",
+      "args": {
+        "query": "报销流程",
+        "top_k": 10
+      },
+      "observation": {
+        "status": "error",
+        "error": "工具 search_docs 调用失败：模拟故障（第 2 次）"
+      },
+      "observation_summary": "错误：工具 search_docs 调用失败：模拟故障（第 2 次）",
+      "reason": "首次调用，执行初始检索（原始查询：报销流程，还原后：报销流程）"
+    }
+  ],
+  "result": {
+    "status": "completed",
+    "answer": "循环终止",
+    "citations": [],
+    "gaps": [],
+    "steps": [
+      {
+        "step": 0,
+        "action": "search_docs",
+        "args": {
+          "query": "报销流程",
+          "top_k": 10
+        },
+        "observation": {
+          "status": "error",
+          "error": "工具 search_docs 调用失败：模拟故障（第 2 次）"
+        },
+        "observation_summary": "错误：工具 search_docs 调用失败：模拟故障（第 2 次）",
+        "reason": "首次调用，执行初始检索（原始查询：报销流程，还原后：报销流程）"
+      }
+    ]
+  }
+}

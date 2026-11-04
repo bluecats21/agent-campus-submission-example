@@ -1,0 +1,18 @@
+{
+  "case": "context_followup",
+  "description": "上下文追问：多轮对话，第二轮使用指代词",
+  "turns": [
+    {
+      "role": "user",
+      "content": "年假有多少天"
+    },
+    {
+      "role": "assistant",
+      "content": "根据文档 D04：年假天数标准：工作满 1 年不满 10 年为 5 天/年；工作满 10 年不满 20 年为 10 天/年；工作满 20 年以上为 15 天/年。"
+    },
+    {
+      "role": "user",
+      "content": "那申请流程呢"
+    }
+  ]
+}

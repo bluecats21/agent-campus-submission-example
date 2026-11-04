@@ -1,0 +1,6 @@
+{
+  "case": "conflict",
+  "query": "报销期限",
+  "conversation_history": [],
+  "description": "同时命中 D01/D02/D03，元数据为空，需请求确认"
+}

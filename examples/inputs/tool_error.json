@@ -1,0 +1,11 @@
+{
+  "case": "tool_error",
+  "query": "报销流程",
+  "conversation_history": [],
+  "description": "注入 search_docs error times=2，测试工具失败降级",
+  "fault": {
+    "tool": "search_docs",
+    "mode": "error",
+    "times": 2
+  }
+}
